@@ -255,21 +255,6 @@ https://github.com/faker/faker-cloud
   * phoneNumber
   * phoneNumberFormat
   * phoneFormats
-* random
-  * number
-  * float
-  * arrayElement
-  * arrayElements
-  * objectElement
-  * uuid
-  * boolean
-  * word
-  * words
-  * image
-  * locale
-  * alpha
-  * alphaNumeric
-  * hexaDecimal
 * system
   * fileName
   * commonFileName
@@ -406,7 +391,7 @@ console.log(firstRandom === secondRandom);
 
 ```shell
 npm install .
-make test
+npm run test
 ```
 
 You can view a code coverage report generated in coverage/lcov-report/index.html.

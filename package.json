@@ -3,12 +3,11 @@
   "description": "Generate massive amounts of fake contextual data",
   "version": "5.5.3",
   "contributors": [
-    "Marak Squires <marak.squires@gmail.com>",
-    "William Su <s2005lg@126.com>"
+    "Marak Squires <marak.squires@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:zy-su/fakerjs.git"
+    "url": "http://github.com/Marak/Faker.js.git"
   },
   "scripts": {
     "browser": "./node_modules/.bin/gulp browser",
