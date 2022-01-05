@@ -24,4 +24,4 @@ jobs:
   test:
     steps:
       - name: mocha test
-      - run: mocha
+        run: mocha
