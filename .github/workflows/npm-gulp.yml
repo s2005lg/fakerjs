@@ -19,9 +19,3 @@ jobs:
         run: npm install
       - run: npm run build --if-present
       - run: gulp
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: mocha test
-        run: mocha
