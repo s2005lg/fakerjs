@@ -10,18 +10,38 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node:
+          - 16
+
     steps:
       - uses: actions/checkout@v2
+
+      - name: 'Cache node_modules'
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-v${{ matrix.node }}-
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: '${{ matrix.node }}'
 
       - name: Install dependencies
         run: |
           npm install
           npm run build --if-present
           gulp
+
+      - name: Run Mocha test
+        run: |
+          npm run test
+
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
