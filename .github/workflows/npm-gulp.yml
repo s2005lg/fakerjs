@@ -18,11 +18,11 @@ jobs:
           node-version: '16.x'
 
       - name: Install dependencies
-        run: npm install
-      - run: npm run build --if-present
-      - run: gulp
-
-       - name: Coveralls
+        run: |
+          npm install
+          npm run build --if-present
+          gulp
+      - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
